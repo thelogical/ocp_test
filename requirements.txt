@@ -1,0 +1,6 @@
+Flask
+requests
+torchvision
+Pillow
+webptools
+mysql-connector-python

@@ -11,7 +11,7 @@ from flask import jsonify
 import mysql.connector
 
 
-grant_permission()
+#grant_permission()
 
 
 app = Flask(__name__)

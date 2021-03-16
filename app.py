@@ -92,10 +92,10 @@ def hello():
 
 @app.route('/imurl', methods=['POST'])
 def im_url():
-        if os.getenv('MYSQL_PORT'):
-                socket = os.getenv['MYSQL_PORT']
-                host = socket.split('//')[-1].split(':')[0]
-                os.environ['MYSQL_SERVER'] = host
+	if os.getenv('MYSQL_PORT'):
+		socket = os.getenv['MYSQL_PORT']
+		host = socket.split('//')[-1].split(':')[0]
+		os.environ['MYSQL_SERVER'] = host
 	auth = authorize(request)
 	if not auth:
 		d = {"Error": "Incorrect username or password"}

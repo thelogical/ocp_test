@@ -99,7 +99,7 @@ def im_url():
 	imurl=request.form['url']
 	if os.getenv('MYSQL_PORT'):
 		socket = os.getenv['MYSQL_PORT']
-		host = socket.split(':')[0].split('//')[-1]
+		host = socket.split('//')[-1].split(':')[0]
 		os.environ['MYSQL_SERVER'] = host
 	return get_objects(imurl,request)
 

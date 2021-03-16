@@ -3,7 +3,7 @@ ADD . /app
 WORKDIR /app
 RUN pip install -r requirements.txt
 USER root
-RUN chmod 777 -R /app && RUN chmod +x -R /opt/app-root/lib64
+RUN chmod 777 -R /app && chmod +x -R /opt/app-root/lib64
 USER default
 ENV MYSQL_SERVER=10.88.0.10
 ENV MYSQL_USER=flask

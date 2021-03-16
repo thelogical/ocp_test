@@ -92,15 +92,15 @@ def hello():
 
 @app.route('/imurl', methods=['POST'])
 def im_url():
+        if os.getenv('MYSQL_PORT'):
+                socket = os.getenv['MYSQL_PORT']
+                host = socket.split('//')[-1].split(':')[0]
+                os.environ['MYSQL_SERVER'] = host
 	auth = authorize(request)
 	if not auth:
 		d = {"Error": "Incorrect username or password"}
 		return make_response(jsonify(d), 403)
 	imurl=request.form['url']
-	if os.getenv('MYSQL_PORT'):
-		socket = os.getenv['MYSQL_PORT']
-		host = socket.split('//')[-1].split(':')[0]
-		os.environ['MYSQL_SERVER'] = host
 	return get_objects(imurl,request)
 
 if __name__ == '__main__':
